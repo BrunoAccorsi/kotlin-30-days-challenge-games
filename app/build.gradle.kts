@@ -55,6 +55,5 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-    
-    // Removed Coil dependency since we're using drawables directly
+    implementation(libs.androidx.ui.text.google.fonts)
 }

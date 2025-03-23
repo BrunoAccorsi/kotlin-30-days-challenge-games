@@ -140,7 +140,6 @@ fun DayChallengeCard(dayChallenge: DayChallenge, contentPadding: PaddingValues =
                             text = "DAY ${dayChallenge.dayNumber}",
                             style = MaterialTheme.typography.titleLarge.copy(
                                 fontWeight = FontWeight.Bold,
-                                fontSize = 24.sp,
                                 letterSpacing = 1.sp,
                                 color = NeonBlue
                             ),
@@ -191,7 +190,6 @@ fun DayChallengeCard(dayChallenge: DayChallenge, contentPadding: PaddingValues =
                         text = dayChallenge.title,
                         style = MaterialTheme.typography.titleMedium.copy(
                             fontWeight = FontWeight.Bold,
-                            fontSize = 20.sp,
                             color = NeonPurple
                         )
                     )
@@ -201,7 +199,6 @@ fun DayChallengeCard(dayChallenge: DayChallenge, contentPadding: PaddingValues =
                     Text(
                         text = dayChallenge.description,
                         style = MaterialTheme.typography.bodyMedium.copy(
-                            fontSize = 16.sp,
                             color = Color.White
                         )
                     )
