@@ -56,12 +56,10 @@ import com.example.a30daysgames.model.DayChallenge
 
 @Composable
 fun DayChallengeCard(dayChallenge: DayChallenge, contentPadding: PaddingValues = PaddingValues(0.dp)) {
-    // Add animation visibility state
     var visible by remember { mutableStateOf(false) }
     val interactionSource = remember { MutableInteractionSource() }
     val isPressed by interactionSource.collectIsPressedAsState()
     
-    // Scale animation when pressed
     val scale by animateFloatAsState(
         targetValue = if (isPressed) 0.95f else 1f,
         animationSpec = spring(
@@ -71,7 +69,6 @@ fun DayChallengeCard(dayChallenge: DayChallenge, contentPadding: PaddingValues =
         label = "scale"
     )
     
-    // Shimmer effect for the image (moved from card border)
     val infiniteTransition = rememberInfiniteTransition(label = "imageShimmer")
     val shimmerOffset by infiniteTransition.animateFloat(
         initialValue = -1000f,
@@ -83,7 +80,6 @@ fun DayChallengeCard(dayChallenge: DayChallenge, contentPadding: PaddingValues =
         label = "shimmer"
     )
     
-    // Trigger visibility after composition
     LaunchedEffect(Unit) {
         visible = true
     }
@@ -102,12 +98,10 @@ fun DayChallengeCard(dayChallenge: DayChallenge, contentPadding: PaddingValues =
                 .padding(horizontal = 16.dp, vertical = 8.dp)
                 .fillMaxWidth()
                 .shadow(8.dp, RoundedCornerShape(16.dp))
-                // Removed shimmer border from here
                 .clickable(
                     interactionSource = interactionSource,
-                    indication = null // No ripple, we're using our own animation
+                    indication = null
                 ) {
-                    // Handle click if needed
                 }
                 .let { mod ->
                     if (scale != 1f) mod.graphicsLayer(scaleX = scale, scaleY = scale) else mod
@@ -125,7 +119,6 @@ fun DayChallengeCard(dayChallenge: DayChallenge, contentPadding: PaddingValues =
                 )
             ) {
                 Column(modifier = Modifier.padding(16.dp)) {
-                    // Day number with neon effect
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -133,7 +126,6 @@ fun DayChallengeCard(dayChallenge: DayChallenge, contentPadding: PaddingValues =
                             .padding(vertical = 8.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        // Pulsating text animation
                         val pulseAnimation by infiniteTransition.animateFloat(
                             initialValue = 0.95f,
                             targetValue = 1.05f,
@@ -162,13 +154,11 @@ fun DayChallengeCard(dayChallenge: DayChallenge, contentPadding: PaddingValues =
 
                     Spacer(modifier = Modifier.height(12.dp))
                     
-                    // Game Image between day number and title with shimmer effect
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clip(RoundedCornerShape(8.dp))
                             .background(Color(0xFF1A1A2E))
-                            // Add shimmer border to the image
                             .border(
                                 width = 2.dp,
                                 brush = Brush.linearGradient(
@@ -179,7 +169,6 @@ fun DayChallengeCard(dayChallenge: DayChallenge, contentPadding: PaddingValues =
                                 shape = RoundedCornerShape(8.dp)
                             )
                     ) {
-                        // Use resource drawable instead of AsyncImage
                         val imageResId = if (dayChallenge.imageResId != 0) {
                             dayChallenge.imageResId
                         } else {
@@ -198,7 +187,6 @@ fun DayChallengeCard(dayChallenge: DayChallenge, contentPadding: PaddingValues =
 
                     Spacer(modifier = Modifier.height(12.dp))
 
-                    // Challenge title
                     Text(
                         text = dayChallenge.title,
                         style = MaterialTheme.typography.titleMedium.copy(
@@ -210,7 +198,6 @@ fun DayChallengeCard(dayChallenge: DayChallenge, contentPadding: PaddingValues =
 
                     Spacer(modifier = Modifier.height(8.dp))
 
-                    // Challenge description
                     Text(
                         text = dayChallenge.description,
                         style = MaterialTheme.typography.bodyMedium.copy(

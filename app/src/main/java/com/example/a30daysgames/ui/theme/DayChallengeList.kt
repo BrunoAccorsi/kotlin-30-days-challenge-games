@@ -36,10 +36,8 @@ fun DayChallengeList(
         contentPadding = contentPadding
     ) {
         itemsIndexed(challenges) { index, challenge ->
-            // Display the card
             DayChallengeCard(dayChallenge = challenge)
             
-            // Add a divider after each item except the last one
             if (index < challenges.size - 1) {
                 GradientDivider()
             }
