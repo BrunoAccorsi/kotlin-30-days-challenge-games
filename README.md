@@ -1,5 +1,6 @@
 # 30 Days Games Challenge
 
+
 A mobile application that challenges users to play different games over a 30-day period, tracking progress and achievements.
 
 ## 📱 Overview
@@ -15,8 +16,11 @@ The 30 Days Games Challenge app provides users with a structured gaming experien
 - **Offline Support**: Access your challenges even without internet connection
 
 ## 📸 Screenshots
-
-_[Screenshots will be added here]_
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4fab8332-dfb8-403b-8c9c-150c2f6d9b90" width="200" alt="Home Screen"/>
+  <img src="https://github.com/user-attachments/assets/b891a9a5-3b1c-4c2d-8ede-c220d5d30e50" width="200" alt="Home Screen p2"/>
+  <img src="https://github.com/user-attachments/assets/8d06abeb-7dfb-4150-9d5f-e7a8789937a5" width="200" alt="Home Screen p3"/>
+</p>
 
 ## 🚀 Getting Started
 
